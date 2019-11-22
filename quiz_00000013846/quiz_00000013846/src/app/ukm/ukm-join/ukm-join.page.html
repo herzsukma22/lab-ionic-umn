@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="m1"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ ukm.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{ ukm.title }}</ion-card-title>
+          </ion-card-header>
+          <ion-img [src]="ukm.imageUrl"></ion-img>
+          <ion-card-content>{{ ukm.description }}</ion-card-content>
+        </ion-card>
+          <ion-button expand="block" color="primary" (click)="addUkm(ukm)">Join</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

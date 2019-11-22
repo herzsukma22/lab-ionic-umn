@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home/tabs/discover"></ion-back-button>
+      </ion-buttons>
+    <ion-title>Review</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2">
+        <ion-card>
+          <ion-row>
+            <ion-col>
+              <ion-card-content>
+                <ion-img [src]="review.imageUrl" style="width: 100%;"></ion-img>
+                <ion-buttons>
+                  <ion-button icon-only color="danger">
+                    <ion-icon [name]="isFavourite ? 'heart' : 'heart-empty'"></ion-icon> &nbsp; &nbsp;
+                    <ion-label style="color: black;" (click)="Favourite(review)">{{ isFavourite ? 'Remove' : 'Favourite' }}</ion-label>
+                  </ion-button>
+                </ion-buttons>
+              </ion-card-content>
+            </ion-col>
+            <ion-col>
+              <ion-card-content>
+                <ion-card-title>{{ review.brand }}</ion-card-title>
+                <h2>{{ review.subBrand }}</h2>
+                <br>
+                <h3>Rating: <b>{{ review.rating * 100 }}%</b></h3>
+                <ion-progress-bar color="success" value="0.86"></ion-progress-bar>&nbsp;
+                <h3>Review: <b>100 reviewers</b></h3>
+                <br>
+                <h3>Price (estimated):</h3>
+                <h2><b>{{ review.price | currency:'Rp' }}</b></h2>
+              </ion-card-content>          
+            </ion-col>
+          </ion-row>
+          <ion-card-content>
+            <p style="text-align: justify;">{{ review.description }}</p>
+          </ion-card-content>
+        </ion-card>
+        <ion-list>
+          <h3><b>Reviewers</b></h3>
+          <ion-item>
+            <ion-avatar slot="start">
+                <img src="https://d2787ndpv5cwhz.cloudfront.net/4dfe702f686a61a939b1fb0dca3cd4e81f8e971f/300x300.jpg">
+            </ion-avatar>
+            <ion-label>
+              <h2><b>Brian Smith</b></h2>
+              <p>I think that's the solution for my skin. Thanks for recomendation!</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-avatar slot="start">
+                <img src="https://nashvillefamilywellness.com/wp-content/uploads/2018/12/caroline-hartman-4-217x300.jpg">
+            </ion-avatar>
+            <ion-label>
+              <h2><b>Caroline Hartman</b></h2>
+              <p>I've been used this for 3 months and still count now. Must try this one!</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
